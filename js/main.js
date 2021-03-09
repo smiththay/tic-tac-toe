@@ -1,54 +1,31 @@
 
-let View = 
-//
 
+    function makeBoard(){
 
+    let container = document.getElementById('container')
+    container.setAttribute('class', 'container d-flex position-absolute top-50 start-50 translate-middle')
+    let rowH = document.createElement('div');
+    //rowH.setAttribute('class','row border');
+    //container.appendChild(rowH);
+    let row1 = document.createElement('div');
+    row1.setAttribute('class','row border');
+    container.appendChild(row1);
 
-
-let Model =
-//create my objects, functions and global variables 
-
-
-
-
-
-
-let Controller= 
-//click handlers and event listeners 
-
-
-
-
-
-
-/*var App =  {
-    // sets up the mvc objects and initializes them
-    m:Object.create(Model),
-
-    v:Object.create(View),
-
-    c:Object.create(Controller),
-
-    init: function (){
-        // 3
-        this.m.init(this.c);
-
-        // 4
-        this.v.init(this.m);
-
-        // 5
-        this.c.init(this.v, this.m);
-    },
-
-    eof:function (){
-        // clean up, exit
+    for (let i = 0; i <= 8; i++) {
+        let tile = document.createElement('div');
+        //tile.innerText= "click me" + index;
+         //tile.addEventListener('click', listener())
+         tile.setAttribute('class','col-4 border p-5');
+         row1.appendChild(tile);  
+         
     }
+    
+    let button = document.createElement('button')
+    button.innerText="RESET"
+    button.setAttribute('class','col btn btn-primary btn-lg')
+    row1.appendChild(button);
+ 
 }
 
-function init (){
-    // instantiate and init the Model, View, and Controller
 
-    // 1 - page loads, run init on the app
-    App.init();
-
-    console.log(App);*/
+makeBoard();
