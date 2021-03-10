@@ -165,3 +165,98 @@ tiles could have states
     forfeit / auto win (stretch goal)
 - lose button (stretch goal)
 - game history (stretch goal)
+
+<------------------------------------------------------------------------------------------->
+# OOP class's 
+
+# class Board 
+// Board will be what is initialized onLoad "Template" for the project. When restart clicked go to this page.
+  
+    constructor( playerText, currentPlayer){
+        this. let current player = player 1
+        this....
+        this....}
+
+    headerText:
+        createElement
+        setAttribute
+        appendChild
+
+    playerText: 
+        createElement
+        setAttribute
+        appendChild
+
+
+        player 1 will be associated with "X"
+        player 2 will be associated with "O"
+
+        player text in class Board 
+        will switch between tileClicks
+
+
+    gridTile:
+        createElement
+        setAttribute
+        appendChild
+        
+        for loop
+
+        createElement
+        setAttribute
+        appendChild
+       
+
+    Button:
+        createElement
+        setAttribute
+        appendChild
+        eventListener
+        eventLister(click, return)
+    
+    return()
+        render class Board
+    
+     set currentPlayer:
+        switchPlayer()
+    when tile clicked 
+        if currentPlayer = player1
+        then currentPlayer != player1
+
+  CheckWin()
+   
+    win conditions:
+     [xxx], [xxx], [xxx], ............
+
+     for loop 
+      go through win conditions
+      if win condition is "X integer"
+      return "player 1 wins"
+      else if
+      win condition is "O integer"
+      return "player 2 wins"
+
+
+# class Tile
+   
+    constructor( tileClick)
+    add other things that tile can know
+    
+
+    eventListener(click, tileClick)
+
+    tileClick()
+        if current player = player1
+        input 'X'
+        else
+        input '0'
+        
+        function:
+            if tile has been clicked, then tile can no longer be clicked
+       
+
+
+ # Initialize/ Render function
+  
+    init()
+    render()
