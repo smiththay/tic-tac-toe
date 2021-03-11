@@ -1,7 +1,26 @@
+class Tile {
+    constructor(id, tileHTML) {
+        this.id = id;
+        this.mark = '';
+        this.beenClicked = false
+        this.tileHTML = tileHTML
+    
+    }
+}
 
 class Board {
     constructor() {
-      //  this.boardGame = this.makeBoard()
+        this.turn = false
+        this.tilesArray = [];
+        this.count = 0;
+        this.player=''
+
+        
+        //this.clickTile = this.clickTile.bind(this);
+        // this.player1='X'
+        // this.player2='O'
+        // this.circleTurn=''
+        //  this.boardGame = this.makeBoard()
     }
     makeBoard() {
         let container = document.getElementById('container')
@@ -20,40 +39,47 @@ class Board {
         for (let i = 0; i <= 8; i++) {
             let tile = document.createElement('div');
             tile.setAttribute('class', 'col-4 border border-success p-5');
-            tile.id = i
-       //tile.addEventListener('click', function tileClick()
+            tile.id = i;
+            const tileObject = new Tile(i, tile);
+            tile.addEventListener('click', this.clickTile.bind(this, tileObject));
+            this.tilesArray.push(tileObject);
             row1.appendChild(tile);
-        };
+        }
 
         let button = document.createElement('button')
         button.innerText = "RESET"
         button.setAttribute('class', 'col btn btn-primary btn-lg')
-        //button.addEventListener('click', );
+        //button.addEventListener('click', function reset(){
+
+
         row1.appendChild(button);
     }
 
-    //returnButton(){return to state}
+    clickTile(obj, id) {
+        if(obj.beenClicked==false){
+        obj.beenClicked = true
+        if(this.count % 2 === 0){
+            this.player = "O"
+        }else{
+            this.player = "X"
+        }
+        obj.tileHTML.innerText= this.player
+        this.count++;
 
-    //switchPlayer(){}
+      //  console.log("hello", id)
+       //console.log(this.tilesArray)
+       // id.innerHTML= "x";
+    }
+    }
+}
+    // turn = !turn; 
+ 
 
-        
-    //checkWin(){}
 
-
-
-let ticTacToeBoard = new Board()
-ticTacToeBoard.makeBoard()
-console.log(ticTacToeBoard)
-
-/*class Tile{
-   constructor()
+function init() {
+    let ticTacToeBoard = new Board()
+    ticTacToeBoard.makeBoard()
+    //console.log(ticTacToeBoard)
 
 }
-*/
-
-
-/*
-function init(){
-
-}
-*/
+init()
